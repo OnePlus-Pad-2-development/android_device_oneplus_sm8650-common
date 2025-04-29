@@ -68,33 +68,50 @@ BOARD_USES_QCOM_MERGE_DTBS_SCRIPT := true
 TARGET_NEEDS_DTBOIMAGE := true
 
 # Properties
-TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/properties/odm.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/properties/product.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/properties/system_ext.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor.prop
+
+ifneq ($(TARGET_IS_TABLET),true)
+TARGET_ODM_PROP += $(COMMON_PATH)/configs/properties/odm-phone.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/properties/system_ext-phone.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/properties/vendor-phone.prop
+endif
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
+ifneq ($(TARGET_IS_TABLET),true)
 # Fingerprint
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/oplus:libudfps_extension.oplus
+endif
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     hardware/oplus/vintf/device_framework_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/framework_manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/framework_manifest.xml
 DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := \
-    $(COMMON_PATH)/manifest.xml \
-    $(COMMON_PATH)/network_manifest.xml \
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/configs/vintf/manifest.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa.xml \
     hardware/qcom-caf/sm8650/audio/primary-hal/configs/common/manifest_non_qmaa_extn.xml
 
-ODM_MANIFEST_FILES := \
-    $(COMMON_PATH)/manifest_odm.xml \
-    $(COMMON_PATH)/network_manifest_odm.xml
+ifeq ($(TARGET_IS_TABLET),true)
+ODM_MANIFEST_FILES += \
+    $(COMMON_PATH)/configs/vintf/manifest_odm-tablet.xml
+else
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/configs/vintf/manifest-phone.xml \
+    $(COMMON_PATH)/configs/vintf/network_manifest.xml
+
+ODM_MANIFEST_FILES += \
+    $(COMMON_PATH)/configs/vintf/manifest_odm.xml \
+    $(COMMON_PATH)/configs/vintf/network_manifest_odm.xml
+
+endif
 
 # Init Boot
 BOARD_INIT_BOOT_HEADER_VERSION := 4
@@ -214,8 +231,10 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+ifneq ($(TARGET_IS_TABLET),true)
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
+endif
 
 # Security
 BOOT_SECURITY_PATCH := 2025-03-01

@@ -203,7 +203,6 @@ vendor.display.enable_early_wakeup=1
 vendor.display.enable_fb_scaling=1
 vendor.display.enable_hdr10_gpu_target=0
 vendor.display.enable_optimize_refresh=0
-vendor.display.enable_rc_support=0
 vendor.display.enable_rounded_corner=1
 vendor.display.force_lm_to_fb_config=1
 vendor.display.force_tonemapping=1
@@ -234,8 +233,6 @@ vendor.gatekeeper.is_security_level_spu=0
 
 # Graphics
 debug.egl.hw=0
-debug.sf.auto_latch_unsignaled=1
-debug.sf.disable_client_composition_cache=1
 debug.sf.early.app.duration=13666666
 debug.sf.earlyGl.app.duration=13666666
 debug.sf.earlyGl.sf.duration=10500000
@@ -265,10 +262,6 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 
-# IMS
-persist.vendor.ims.rtp.enableqxdm=15
-persist.vendor.ims.vt.enableadb=3
-
 # Incremental FS
 ro.incremental.enable=yes
 
@@ -294,15 +287,6 @@ ro.vendor.perf.scroll_opt=1
 ro.vendor.qspm.enable=true
 vendor.perf.framepacing.enable=1
 vendor.perf.framepacing.window_apis=0x04
-
-# Radio
-persist.radio.multisim.config=dsds
-persist.vendor.radio.apm_sim_not_pwdn=1
-persist.vendor.radio.custom_ecc=1
-persist.vendor.radio.enableadvancedscan=true
-persist.vendor.radio.procedure_bytes=SKIP
-persist.vendor.radio.sib16_support=1
-ro.telephony.default_network=33,33
 
 # RCS
 persist.vendor.rcs.singlereg.feature=1
