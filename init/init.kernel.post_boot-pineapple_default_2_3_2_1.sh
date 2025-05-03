@@ -236,6 +236,11 @@ else
 	echo 672000 > /sys/devices/system/cpu/cpufreq/policy7/scaling_min_freq
 fi
 
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy2/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy5/scaling_governor
+echo "walt" > /sys/devices/system/cpu/cpufreq/policy7/scaling_governor
+
 # Reset the RT boost, which is 1024 (max) by default.
 echo 0 > /proc/sys/kernel/sched_util_clamp_min_rt_default
 
