@@ -212,6 +212,7 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
 
 # Power
+TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(COMMON_PATH)/power:libperfmgr-ext-oplus
 TARGET_POWERHAL_MODE_EXT := $(COMMON_PATH)/power/power-mode.cpp
 BOARD_POWER_CUSTOM_BOARD_LIB += \
     vendor.oplus.hardware.touch-V1-ndk
