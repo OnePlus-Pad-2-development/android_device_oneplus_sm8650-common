@@ -1,3 +1,10 @@
+soong_namespace {
+    imports: [
+        "hardware/oplus",
+        "vendor/oneplus/sm8650-common",
+    ],
+}
+
 cc_library_static {
     name: "libperfmgr-ext-oplus",
     vendor: true,
@@ -8,4 +15,5 @@ cc_library_static {
         "android.hardware.power-V6-ndk",
         "libbase",
     ],
+    whole_static_libs: ["vendor.oplus.hardware.touch-V2-ndk"],
 }
