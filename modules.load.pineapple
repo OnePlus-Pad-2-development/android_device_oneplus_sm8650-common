@@ -18,9 +18,7 @@ cdsp-loader.ko
 cdsprm.ko
 cfg80211.ko
 charger-ulog-glink.ko
-cnss2.ko
 cnss_nl.ko
-cnss_plat_ipc_qmi_svc.ko
 cnss_prealloc.ko
 cnss_utils.ko
 core_hang_detect.ko
@@ -143,7 +141,6 @@ pwm-qti-lpg.ko
 q6_dlkm.ko
 q6_notifier_dlkm.ko
 q6_pdr_dlkm.ko
-qca_cld3_kiwi_v2.ko
 qce50_dlkm.ko
 qcedev-mod_dlkm.ko
 qcom-cpufreq-hw-debug.ko
