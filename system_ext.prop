@@ -25,11 +25,6 @@ persist.vendor.dpm.feature=11
 # GPS
 persist.backup.ntpServer=0.pool.ntp.org
 
-# IMS
-persist.dbg.volte_avail_ovr=1
-persist.dbg.vt_avail_ovr=1
-persist.dbg.wfc_avail_ovr=1
-
 # Media
 media.aac_51_output_enabled=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
@@ -56,14 +51,6 @@ persist.data.df.ul_mode=5
 persist.data.wda.enable=true
 persist.rmnet.data.enable=true
 persist.vendor.data.mode=concurrent
-
-# Radio
-persist.radio.hvolte.enable=1
-persist.vendor.radio.poweron_opt=1
-ril.subscription.types=NV,RUIM
-ro.telephony.sim_slots.count=2
-telephony.active_modems.max_count=2
-telephony.lteOnCdmaDevice=1
 
 # Sensors
 persist.vendor.sensors.enable.mag_filter=true
