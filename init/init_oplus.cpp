@@ -78,6 +78,11 @@ void vendor_load_properties() {
                     hw_region_id == NV_ID_IN ? "CPH2573" :
                     hw_region_id == NV_ID_US ? "CPH2583" : "CPH2581");
             break;
+        case 23926:
+        case 23976:
+            OverrideProperty("ro.product.device", "OP5DAAL1");
+            OverrideProperty("ro.product.vendor.device", "OP5DAAL1");
+            OverrideProperty("ro.product.product.model", "OPD2403");
         default:
             LOG(ERROR) << "Unexpected prjname: " << prjname;
     }
