@@ -26,6 +26,7 @@ oplus_bsp_ist_down.ko
 oplus_bsp_ist_up.ko
 oplus_bsp_mxm_down.ko
 oplus_bsp_mxm_up.ko
+oplus_bsp_pogo_keyboard.ko
 oplus_bsp_synaptics_tcm2.ko
 oplus_bsp_tp_common.ko
 oplus_bsp_tp_custom.ko
