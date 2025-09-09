@@ -340,6 +340,13 @@ vendor/etc/init/android.hardware.identity-service-qti.rc
 vendor/etc/vintf/manifest/manifest_identity_credential.xml
 vendor/lib64/libqtiidentitycredential.so
 
+# Init
+vendor/bin/init.crda.sh
+vendor/bin/init.mdm.sh
+vendor/bin/init.qcom.coex.sh
+vendor/bin/init.qcom.efs.sync.sh
+vendor/bin/init.qcom.sdio.sh
+
 # Kernel
 vendor/bin/init.kernel.post_boot-cliffs.sh
 vendor/bin/init.kernel.post_boot-cliffs_2_2_1.sh
