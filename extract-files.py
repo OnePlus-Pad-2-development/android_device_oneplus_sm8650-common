@@ -106,7 +106,9 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/media_codecs_pineapple.xml',
     ): blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video).*\n', '')
-        .regex_replace('media_codecs_vendor_audio', 'media_codecs_dolby_vision'),
+        .regex_replace('media_codecs_vendor_audio', 'media_codecs_dolby_vision')
+        .regex_replace('</MediaCodecs>','    <Include href="media_codecs_dolby_audio.xml" />')
+        .add_line_if_missing('</MediaCodecs>'),
     'vendor/etc/init/android.hardware.bluetooth@1.1-service-qti.rc': blob_fixup()
         .regex_replace('capabilities BLOCK_SUSPEND NET_ADMIN\n', 'capabilities BLOCK_SUSPEND NET_ADMIN SYS_NICE\n')
         .regex_replace('\n    capabilities SYS_NICE\n', '\n'),
