@@ -382,7 +382,17 @@ PRODUCT_SOONG_NAMESPACES += \
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # Telephony
-ifneq ($(TARGET_IS_TABLET),true)
+ifeq ($(TARGET_IS_TABLET),true)
+PRODUCT_PACKAGES += \
+    extphonelib \
+    extphonelib-product \
+    extphonelib.xml \
+    extphonelib_product.xml \
+    qti-telephony-utils \
+    qti-telephony-utils-prd \
+    qti_telephony_utils.xml \
+    qti_telephony_utils_prd.xml
+else
 PRODUCT_PACKAGES += \
     extphonelib \
     extphonelib-product \
