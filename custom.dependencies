@@ -1,9 +1,5 @@
 [
   {
-    "repository": "inferno0230/hardware_dolby",
-    "target_path": "hardware/dolby"
-  },
-  {
     "repository": "PixelOS-AOSP/android_hardware_oplus",
     "target_path": "hardware/oplus"
   },

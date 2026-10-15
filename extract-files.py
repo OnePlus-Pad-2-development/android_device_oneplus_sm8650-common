@@ -103,9 +103,7 @@ blob_fixups: blob_fixups_user_type = {
         'vendor/etc/media_codecs_pineapple.xml',
     ): blob_fixup()
         .regex_replace('.*media_codecs_(google_audio|google_c2|google_telephony|google_video).*\n', '')
-        .regex_replace('media_codecs_vendor_audio', 'media_codecs_dolby_vision')
-        .regex_replace('</MediaCodecs>','    <Include href="media_codecs_dolby_audio.xml" />')
-        .add_line_if_missing('</MediaCodecs>'),
+        .regex_replace('media_codecs_vendor_audio', 'media_codecs_dolby_vision'),
     'vendor/etc/init/nicmd.rc': blob_fixup()
         .regex_replace(
             r'(service\s+vendor\.nicmd\s+/system/vendor/bin/nicmd\s*\n\s*class\s+main)',
